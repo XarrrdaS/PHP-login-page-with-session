@@ -6,13 +6,10 @@
     $is_admin = $_SESSION['admin'] ?? false;
     header("Content-Type: text/html; charset=UTF-8");
 
-    // Sprawdzenie czy kliknięto przycisk wylogowania
     if(isset($_POST['logout'])) {
-        // Zakończenie sesji i wygenerowanie nowego identyfikatora
         session_unset();
         session_destroy();
         session_regenerate_id();
-        // Przekierowanie na stronę logowania
         header("Location: index.php");
         exit;
     }
